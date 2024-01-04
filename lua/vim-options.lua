@@ -6,3 +6,5 @@ vim.g.mapleader = " "
 
 vim.wo.relativenumber = true
 
+vim.keymap.set("n", "<c-s>", ":wa<CR>", {})
+
