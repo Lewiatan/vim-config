@@ -4,9 +4,9 @@
 
 - [x]  Package management (lazy)
 - [x]  Fuzzy search (telescope)
-- [ ]  Project files tree view (nvim-tree)
-- [ ]  Syntax highlighting & indentation (treesitter)
-- [ ]  Color scheme
+- [x]  Project files tree view (nvim-tree)
+- [x]  Syntax highlighting & indentation (treesitter)
+- [x]  Color scheme
 - [ ]  LSP for php and js (lsp-zero)
 - [ ]  Phpactor as a plugin?
 - [ ]  Support for refactoring actions:
@@ -19,5 +19,5 @@
     - [ ]  Create blank classes/interfaces
     - [ ]  Implement methods from parent interface/abstract
 - [ ]  Local file history (undo tree)
-- [ ]  Github support (lazy git)
+- [x]  Github support (lazy git)
 - [ ]  Database interface (nvim-dbee or vim-dadbod-ui)
