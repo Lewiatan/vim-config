@@ -19,7 +19,7 @@ return {
       }
     })
     
-		vim.keymap.set("n", "<leader>e", ":Neotree filesystem reveal left<CR>", {})
+		vim.keymap.set("n", "<leader>e", ":Neotree filesystem reveal right<CR>", {})
 		vim.keymap.set("n", "<leader>fb", ":Neotree buffers reveal float<CR>", {})
 	end,
 }
