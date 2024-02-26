@@ -18,6 +18,6 @@
 - [ ]  Code generation:
     - [ ]  Create blank classes/interfaces
     - [ ]  Implement methods from parent interface/abstract
-- [ ]  Local file history (undo tree)
+- [x]  Local file history (undo tree)
 - [x]  Github support (lazy git)
 - [ ]  Database interface (nvim-dbee or vim-dadbod-ui)
