@@ -1,46 +1,26 @@
 return {
   {
-    'VonHeikemen/lsp-zero.nvim',
-    branch = 'v3.x',
+    "williamboman/mason.nvim",
     lazy = false,
     config = function()
-      local lsp_zero = require('lsp-zero')
-
-      lsp_zero.on_attach(function(client, bufnr)
-        -- see :help lsp-zero-keybindings
-        -- to learn the available actions
-        lsp_zero.default_keymaps({ buffer = bufnr })
-      end)
-    end
-
+      require("mason").setup()
+    end,
   },
   {
-    'williamboman/mason.nvim',
+    "williamboman/mason-lspconfig.nvim",
+    lazy = false,
+    opts = {
+      auto_install = true,
+    },
+  },
+  {
+    "neovim/nvim-lspconfig",
     lazy = false,
     config = function()
-      require('mason').setup({})
-    end
-  },
-  {
-    -- to learn how to use mason.nvim with lsp-zero
-    -- read this: https://github.com/VonHeikemen/lsp-zero.nvim/blob/v3.x/doc/md/guides/integrate-with-mason-nvim.md
-
-    'williamboman/mason-lspconfig.nvim',
-    lazy = false,
-    config = function()
-      local lsp_zero = require('lsp-zero')
-      require('mason-lspconfig').setup({
-        handlers = {
-          lsp_zero.default_setup,
-        }
-      })
-    end
-  },
-  { 'hrsh7th/cmp-nvim-lsp' },
-  { 'hrsh7th/nvim-cmp' },
-  { 'L3MON4D3/LuaSnip' },
-  {
-    'neovim/nvim-lspconfig',
-    lazy = false,
+      vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
+      vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
+      vim.keymap.set("n", "gr", vim.lsp.buf.references, {})
+      vim.keymap.set("n", "ca", vim.lsp.buf.code_action, {})
+    end,
   },
 }
