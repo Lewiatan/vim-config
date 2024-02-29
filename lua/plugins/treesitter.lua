@@ -9,7 +9,6 @@ return {
       indent = { enable = true },
       ensure_installed = {"lua", "vim", "vimdoc", "css", "diff", "dockerfile", "gitignore", "graphql", "html", "javascript", "jsdoc", "json", "php", "phpdoc", "regex", "typescript", "yaml", "xml"},
       sync_instsall = false,
-      auto_install = true,
       additional_vim_regex_highlighting = false,
     })
   end
