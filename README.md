@@ -33,3 +33,4 @@
 - <https://github.com/lewis6991/gitsigns.nvim>
 - <https://github.com/stevearc/conform.nvim> (? maybe not needed due to cmp and lsp)
 - <https://github.com/josean-dev/dev-environment-files/blob/main/.config/nvim/lua/josean/plugins/auto-session.lua>
+- <https://github.com/nvim-treesitter/nvim-treesitter-context>
