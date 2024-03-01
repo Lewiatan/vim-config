@@ -7,7 +7,7 @@
 - [x]  Project files tree view (nvim-tree)
 - [x]  Syntax highlighting & indentation (treesitter)
 - [x]  Color scheme
-- [x]  LSP for php and js (lsp-zero)
+- [x]  LSP for php and js 
 - [ ]  Phpactor as a plugin?
 - [ ]  Support for refactoring actions:
     - [ ]  Extract method
@@ -21,6 +21,7 @@
 - [x]  Local file history (undo tree)
 - [x]  Github support (lazy git)
 - [ ]  Database interface (nvim-dbee or vim-dadbod-ui)
+- [ ]  Code folding
 
 ## Plugins to implement:
 - <https://github.com/numToStr/Comment.nvim>
