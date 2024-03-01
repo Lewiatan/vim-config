@@ -12,7 +12,7 @@
 - [ ]  Support for refactoring actions:
     - [ ]  Extract method
     - [ ]  Extract variable/constsant
-    - [ ]  Rename method/variable/constant
+    - [x]  Rename method/variable/constant
     - [ ]  Move up/down code lines
     - [ ]  Comment/uncomment line/selection
 - [ ]  Code generation:
@@ -30,5 +30,4 @@
 - <https://github.com/mfussenegger/nvim-lint> (? maybe it's not needed due to cmp and lsp)
 - <https://github.com/stevearc/conform.nvim> (? maybe not needed due to cmp and lsp)
 - <https://github.com/josean-dev/dev-environment-files/blob/main/.config/nvim/lua/josean/plugins/auto-session.lua>
-- <https://github.com/nvim-treesitter/nvim-treesitter-context>
 - <https://github.com/ThePrimeagen/refactoring.nvim>
