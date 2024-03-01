@@ -19,3 +19,5 @@ vim.keymap.set('n', 'gg', 'ggzz')
 
 vim.keymap.set('n', '<c-d>', '<c-d>zz')
 vim.keymap.set('n', '<c-u>', '<c-u>zz')
+vim.keymap.set('n', 'J', '20jzz')
+vim.keymap.set('n', 'K', '20kzz')
