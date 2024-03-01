@@ -24,13 +24,11 @@
 - [ ]  Code folding
 
 ## Plugins to implement:
-- <https://neovimcraft.com/plugin/NvChad/nvim-colorizer.lua>
 - <https://github.com/stevearc/dressing.nvim>
 - <https://github.com/nvim-treesitter/nvim-treesitter-textobjects> (for swapping functions and parameters at the beggining)
 - <https://github.com/kylechui/nvim-surround>
 - <https://github.com/windwp/nvim-autopairs>
 - <https://github.com/mfussenegger/nvim-lint> (? maybe it's not needed due to cmp and lsp)
-- <https://github.com/lewis6991/gitsigns.nvim>
 - <https://github.com/stevearc/conform.nvim> (? maybe not needed due to cmp and lsp)
 - <https://github.com/josean-dev/dev-environment-files/blob/main/.config/nvim/lua/josean/plugins/auto-session.lua>
 - <https://github.com/nvim-treesitter/nvim-treesitter-context>
