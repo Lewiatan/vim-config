@@ -27,7 +27,6 @@
 ## Plugins to implement:
 - <https://github.com/stevearc/dressing.nvim>
 - <https://github.com/nvim-treesitter/nvim-treesitter-textobjects> (for swapping functions and parameters at the beggining)
-- <https://github.com/kylechui/nvim-surround>
 - <https://github.com/mfussenegger/nvim-lint> (? maybe it's not needed due to cmp and lsp)
 - <https://github.com/stevearc/conform.nvim> (? maybe not needed due to cmp and lsp)
 - <https://github.com/josean-dev/dev-environment-files/blob/main/.config/nvim/lua/josean/plugins/auto-session.lua>
@@ -35,7 +34,7 @@
 - <https://github.com/nvimtools/none-ls.nvim>
 
 
-## vim-surround usage
+## nvim-surround usage
 The three "core" operations of `add`/`delete`/`change` can be done with the
 keymaps `ys{motion}{char}`, `ds{char}`, and `cs{target}{replacement}`,
 respectively. For the following examples, `*` will denote the cursor position:
