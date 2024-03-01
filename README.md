@@ -24,7 +24,6 @@
 - [ ]  Code folding
 
 ## Plugins to implement:
-- <https://github.com/numToStr/Comment.nvim>
 - <https://neovimcraft.com/plugin/NvChad/nvim-colorizer.lua>
 - <https://github.com/stevearc/dressing.nvim>
 - <https://github.com/nvim-treesitter/nvim-treesitter-textobjects> (for swapping functions and parameters at the beggining)
