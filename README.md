@@ -38,18 +38,18 @@
 
 | Keybind | Function |
 | ------- | -------- |
-| <C-w><C-s> | Split horizontally | 
-| <C-w><C-v> | Split vertically |
-| <C-h,j,k,l> | Move around splits |
+| `<C-w><C-s>` | Split horizontally | 
+| `<C-w><C-v>` | Split vertically |
+| `<C-h,j,k,l>` | Move around splits |
 
 ### File searching
 
 | Keybind | Function |
 | ------- | -------- |
-| <leader>ff | Find files |
-| <leader>fr | Find recent | 
+| `<leader>ff` | Find files |
+| `<leader>fr` | Find recent | 
 | In telescope |
-| <C-j,k> | Select prex, next |
+| `<C-j,k>` | Select prex, next |
 
 
 ## nvim-surround usage
