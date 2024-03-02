@@ -25,7 +25,6 @@
 - [ ]  Code formatting
 
 ## Plugins to implement:
-- <https://github.com/stevearc/dressing.nvim>
 - <https://github.com/nvim-treesitter/nvim-treesitter-textobjects> (for swapping functions and parameters at the beggining)
 - <https://github.com/mfussenegger/nvim-lint> (? maybe it's not needed due to cmp and lsp)
 - <https://github.com/stevearc/conform.nvim> (? maybe not needed due to cmp and lsp)
