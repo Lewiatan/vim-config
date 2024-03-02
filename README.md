@@ -33,6 +33,24 @@
 - <https://github.com/ThePrimeagen/refactoring.nvim>
 - <https://github.com/nvimtools/none-ls.nvim>
 
+## Useful keybindings
+### Window
+
+| Keybind | Function |
+| ------- | -------- |
+| <C-w><C-s> | Split horizontally | 
+| <C-w><C-v> | Split vertically |
+| <C-h,j,k,l> | Move around splits |
+
+### File searching
+
+| Keybind | Function |
+| ------- | -------- |
+| <leader>ff | Find files |
+| <leader>fr | Find recent | 
+| In telescope |
+| <C-j,k> | Select prex, next |
+
 
 ## nvim-surround usage
 The three "core" operations of `add`/`delete`/`change` can be done with the
@@ -53,4 +71,3 @@ respectively. For the following examples, `*` will denote the cursor position:
 
 Detailed information on how to use this plugin can be found in
 [`:h nvim-surround.usage`](https://github.com/kylechui/nvim-surround/blob/main/doc/nvim-surround.txt).
-
