@@ -31,6 +31,7 @@
 - <https://github.com/josean-dev/dev-environment-files/blob/main/.config/nvim/lua/josean/plugins/auto-session.lua>
 - <https://github.com/ThePrimeagen/refactoring.nvim>
 - <https://github.com/nvimtools/none-ls.nvim>
+- <https://github.com/kevinhwang91/nvim-ufo>
 
 ## Useful keybindings
 ### Window
