@@ -23,6 +23,8 @@
 - [ ]  Database interface (nvim-dbee or vim-dadbod-ui)
 - [ ]  Code folding
 - [ ]  Code formatting
+- [ ]  Go back (ctrl - backspace in storm)
+- [ ]  List methods and properties in class (Ctrl - E in storm)
 
 ## Plugins to implement:
 - <https://github.com/nvim-treesitter/nvim-treesitter-textobjects> (for swapping functions and parameters at the beggining)
