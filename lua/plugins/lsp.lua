@@ -59,6 +59,15 @@ return {
     lazy = false,
     opts = {
       auto_install = true,
+      ensure_installed = {
+        'phpactor',
+        'cssls',
+        'html',
+        'lua_ls',
+        'tsserver',
+        'jsonls',
+        'angularls'
+      }
     },
   },
   {
@@ -75,6 +84,18 @@ return {
         capabilities = capabilities
       })
       lspconfig.lua_ls.setup({
+        capabilities = capabilities
+      })
+      lspconfig.phpactor.setup({
+        capabilities = capabilities
+      })
+      lspconfig.cssls.setup({
+        capabilities = capabilities
+      })
+      lspconfig.jsonls.setup({
+        capabilities = capabilities
+      })
+      lspconfig.angularls.setup({
         capabilities = capabilities
       })
 
