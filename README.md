@@ -22,7 +22,7 @@
 - [x]  Github support (lazy git)
 - [ ]  Database interface (nvim-dbee or vim-dadbod-ui)
 - [ ]  Code folding
-- [ ]  Code formatting
+- [x]  Code formatting
 - [ ]  Go back (ctrl - backspace in storm)
 - [ ]  List methods and properties in class (Ctrl - E in storm)
 
