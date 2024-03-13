@@ -34,6 +34,10 @@
 - <https://github.com/ThePrimeagen/refactoring.nvim>
 - <https://github.com/nvimtools/none-ls.nvim>
 - <https://github.com/kevinhwang91/nvim-ufo>
+- <https://github.com/cshuaimin/ssr.nvim>
+- <https://github.com/HiPhish/rainbow-delimiters.nvim>
+- <https://github.com/rcarriga/nvim-notify>
+- <https://github.com/folke/noice.nvim> just for reference, but rather not to use
 
 ## Useful keybindings
 ### Window
