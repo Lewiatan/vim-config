@@ -38,6 +38,7 @@
 - <https://github.com/HiPhish/rainbow-delimiters.nvim>
 - <https://github.com/rcarriga/nvim-notify>
 - <https://github.com/folke/noice.nvim> just for reference, but rather not to use
+- <https://github.com/YacineDo/mc.nvim>
 
 ## Useful keybindings
 ### Window
