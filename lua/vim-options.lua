@@ -5,6 +5,7 @@ vim.cmd("set shiftwidth=2")
 vim.cmd("set scrolloff=10")
 vim.cmd("set undofile")
 vim.cmd("set undodir=$HOME/.vim/undo")
+vim.cmd("set nu")
 
 vim.g.mapleader = " "
 vim.wo.relativenumber = true
