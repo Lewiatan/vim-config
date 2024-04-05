@@ -67,7 +67,8 @@ return {
         'tsserver',
         'jsonls',
         'angularls',
-        'cucumber_language_server'
+        'cucumber_language_server',
+        'denols'
       }
     },
   },
@@ -100,6 +101,9 @@ return {
         capabilities = capabilities
       })
       lspconfig.cucumber_language_server.setup({
+        capabilities = capabilities
+      })
+      lspconfig.denols.setup({
         capabilities = capabilities
       })
 
