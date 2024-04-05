@@ -20,7 +20,7 @@ return {
       filesystem = {
         hide_dotfiles = false,
         always_show = {
-          ".gitignore", ".env"
+          ".gitignore", ".env*"
         }
       },
       window = {
@@ -30,7 +30,6 @@ return {
           ["s"] = "open_split",
           ["v"] = "open_vsplit",
           ["h"] = "close_node",
-          ["H"] = "close_all_nodes"
         }
       }
     })
