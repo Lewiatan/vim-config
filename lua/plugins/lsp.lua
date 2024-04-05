@@ -66,7 +66,8 @@ return {
         'lua_ls',
         'tsserver',
         'jsonls',
-        'angularls'
+        'angularls',
+        'cucumber_language_server'
       }
     },
   },
@@ -96,6 +97,9 @@ return {
         capabilities = capabilities
       })
       lspconfig.jsonls.setup({
+        capabilities = capabilities
+      })
+      lspconfig.cucumber_language_server.setup({
         capabilities = capabilities
       })
 
