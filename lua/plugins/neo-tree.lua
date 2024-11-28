@@ -19,7 +19,7 @@ return {
       },
       filesystem = {
         filtered_items = {
-          visible = true,
+          visible = false,
           hide_dotfiles = false,
           hide_gitignored = true,
           always_show = {
@@ -31,6 +31,7 @@ return {
           hide_by_name = {
             ".DS_Store",
             "thumbs.db",
+            "node_modules",
           },
           never_show = {
             ".git"
