@@ -99,8 +99,10 @@
 | In tree view |
 | `l` | Toggle node |
 | `h` | Close node |
+| `H` | Close all nodes |
 | `s` | Open split horizontally |
 | `v` | Open split vertically |
+| `?` | Toggle hidden |
 
 ### UndoTree
 | Keybind | Function |
