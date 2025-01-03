@@ -18,9 +18,24 @@ return {
         },
       },
       filesystem = {
-        hide_dotfiles = false,
-        always_show = {
-          ".gitignore", ".env*"
+        filtered_items = {
+          visible = false,
+          hide_dotfiles = false,
+          hide_gitignored = true,
+          always_show = {
+            ".gitignore", ".env"
+          },
+          always_show_by_pattern = {
+            ".env.*"
+          },
+          hide_by_name = {
+            ".DS_Store",
+            "thumbs.db",
+            "node_modules",
+          },
+          never_show = {
+            ".git"
+          }
         }
       },
       window = {
@@ -30,6 +45,8 @@ return {
           ["s"] = "open_split",
           ["v"] = "open_vsplit",
           ["h"] = "close_node",
+          ["H"] = "close_all_nodes",
+          ["?"] = "toggle_hidden"
         }
       }
     })
