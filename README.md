@@ -39,6 +39,7 @@
 - <https://github.com/rcarriga/nvim-notify>
 - <https://github.com/folke/noice.nvim> just for reference, but rather not to use
 - <https://github.com/YacineDo/mc.nvim>
+- <https://github.com/echasnovski/mini.nvim> - a way to go?
 
 ## Useful keybindings
 ### Window
