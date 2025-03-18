@@ -40,6 +40,7 @@
 - <https://github.com/folke/noice.nvim> just for reference, but rather not to use
 - <https://github.com/YacineDo/mc.nvim>
 - <https://github.com/echasnovski/mini.nvim> - a way to go?
+- <https://github.com/karb94/neoscroll.nvim>
 
 ## Useful keybindings
 ### Window
