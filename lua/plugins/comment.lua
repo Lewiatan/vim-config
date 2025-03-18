@@ -1,4 +1,5 @@
 return {
+  enabled = false,
   'numToStr/Comment.nvim',
   event = { "BufReadPre", "BufNewFile" },
   config = function()
