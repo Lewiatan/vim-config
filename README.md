@@ -45,7 +45,6 @@
 
 ## Useful keybindings
 ### Window
-
 | Keybind | Function |
 | ------- | -------- |
 | `<C-w><C-s>` | Split horizontally | 
@@ -123,7 +122,7 @@
 | `s` | Open split horizontally |
 | `v` | Open split vertically |
 | `?` | Toggle hidden |
-| `<esc>` | Close window |
+| `<esc>`,`q` | Close window |
 
 ### UndoTree
 | Keybind | Function |
