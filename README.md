@@ -71,8 +71,8 @@
 ### Move code
 | Keybind | Function |
 | ------- | -------- |
-| `<M-hjkl>` | Movie single line |
-| `<M-hjkl>` | (In visual mode) Movie selection |
+| `<M-h,j,k,l>` | Movie single line |
+| `<M-h,j,k,l>` | (In visual mode) Movie selection |
 
 ### Split/join parameters
 | Keybind | Function |
