@@ -88,27 +88,27 @@
 | ------- | -------- |
 | `<leader>gg` | Open Lazy Git |
 
-### LSP
-| Keybind | Function |
-| ------- | -------- |
-| `<C-q>` | Open docs |
-| `<C-b>` | Scroll docs up |
-| `<C-f>` | Scroll docs down |
-| `<C-Space>` | Complete code |
-| `<C-e>` | Abort |
-| `<CR>` | Confirm mapping |
-| `<C-j>` | Select next mapping |
-| `<C-k>` | Select prev mapping |
-| `H` | Hover |
-| `gd` | Go to definition |
-| `gD` | Go to declaration |
-| `gr` | Go to references |
-| `gi` | Go to implementation |
-| `go` | Go to type definition |
-| `gs` | Go to signature help |
-| `<leader>ca` | Code actions |
-| `<leader>cr` | Rename |
-| `<C-f>` | Format |
+<!-- ### LSP -->
+<!-- | Keybind | Function | -->
+<!-- | ------- | -------- | -->
+<!-- | `<C-q>` | Open docs | -->
+<!-- | `<C-b>` | Scroll docs up | -->
+<!-- | `<C-f>` | Scroll docs down | -->
+<!-- | `<C-Space>` | Complete code | -->
+<!-- | `<C-e>` | Abort | -->
+<!-- | `<CR>` | Confirm mapping | -->
+<!-- | `<C-j>` | Select next mapping | -->
+<!-- | `<C-k>` | Select prev mapping | -->
+<!-- | `H` | Hover | -->
+<!-- | `gd` | Go to definition | -->
+<!-- | `gD` | Go to declaration | -->
+<!-- | `gr` | Go to references | -->
+<!-- | `gi` | Go to implementation | -->
+<!-- | `go` | Go to type definition | -->
+<!-- | `gs` | Go to signature help | -->
+<!-- | `<leader>ca` | Code actions | -->
+<!-- | `<leader>cr` | Rename | -->
+<!-- | `<C-f>` | Format | -->
 
 ### NeoTree
 | Keybind | Function |
