@@ -29,7 +29,7 @@ return {
             ".env.*"
           },
           hide_by_name = {
-            ".DS_Store",
+           ".DS_Store",
             "thumbs.db",
             "node_modules",
           },
@@ -41,6 +41,7 @@ return {
       window = {
         position = "right",
         mappings = {
+          ["<esc>"] = "close_window",
           ["l"] = "toggle_node",
           ["s"] = "open_split",
           ["v"] = "open_vsplit",

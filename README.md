@@ -3,26 +3,26 @@
 ## Requirements for vim functionality in order to make if IDE for PHP and JavaScript/TypeScript
 
 - [x]  Package management (lazy)
-- [x]  Fuzzy search (telescope)
+- [ ]  Fuzzy search (telescope)
 - [x]  Project files tree view (nvim-tree)
-- [x]  Syntax highlighting & indentation (treesitter)
+- [ ]  Syntax highlighting & indentation (treesitter)
 - [x]  Color scheme
-- [x]  LSP for php and js 
+- [ ]  LSP for php and js 
 - [ ]  Phpactor as a plugin?
 - [ ]  Support for refactoring actions:
     - [ ]  Extract method
     - [ ]  Extract variable/constsant
-    - [x]  Rename method/variable/constant
+    - [ ]  Rename method/variable/constant
     - [ ]  Move up/down code lines
     - [ ]  Comment/uncomment line/selection
 - [ ]  Code generation:
-    - [x]  Create blank classes/interfaces
+    - [ ]  Create blank classes/interfaces
     - [ ]  Implement methods from parent interface/abstract
 - [x]  Local file history (undo tree)
 - [x]  Github support (lazy git)
 - [ ]  Database interface (nvim-dbee or vim-dadbod-ui)
 - [ ]  Code folding
-- [x]  Code formatting
+- [ ]  Code formatting
 - [ ]  Go back (ctrl - backspace in storm)
 - [ ]  List methods and properties in class (Ctrl - E in storm)
 
@@ -41,6 +41,7 @@
 - <https://github.com/YacineDo/mc.nvim>
 - <https://github.com/echasnovski/mini.nvim> - a way to go?
 - <https://github.com/karb94/neoscroll.nvim>
+- <https://github.com/folke/snacks.nvim> - replacement for some older plugins like `dressing`
 
 ## Useful keybindings
 ### Window
@@ -63,8 +64,25 @@
 ### Code comments
 | Keybind | Function |
 | ------- | -------- |
-| `<leader>/` | Line comment |
-| `<leader>?` | Block comment |
+| `gcc` | Line comment |
+| `gc` | Block comment (in visual mode) |
+| `dgc` | Delete whole comment block |
+`gc` also works with words motions like `gcw`, `gcap`, `gc{` and so on
+
+### Move code
+| `<M-hjkl>` | Movie single line |
+| `<M-hjkl>` | (In visual mode) Movie selection |
+
+### Split/join parameters
+| `<gS>` | Toggle split/join |
+
+### Surround motions
+| `sa` | Surround around motion |
+| `sd` | Delete around motion |
+| `sr` | Replace around motion |
+| `sf` | Find around motion |
+| `sh` | Highlight around motion |
+| `n`/`l` | Next/Last suffixes for forward/backward (ex. `shn)` higlights next pair `()`) |
 
 ### Lazy Git
 | Keybind | Function |
@@ -105,28 +123,10 @@
 | `s` | Open split horizontally |
 | `v` | Open split vertically |
 | `?` | Toggle hidden |
+| `<esc>` | Close window |
 
 ### UndoTree
 | Keybind | Function |
 | ------- | -------- |
 | `<leader>lh` | Open |
 
-## nvim-surround usage
-The three "core" operations of `add`/`delete`/`change` can be done with the
-keymaps `ys{motion}{char}`, `ds{char}`, and `cs{target}{replacement}`,
-respectively. For the following examples, `*` will denote the cursor position:
-
-```help
-    Old text                    Command         New text
---------------------------------------------------------------------------------
-    surr*ound_words             ysiw)           (surround_words)
-    *make strings               ys$"            "make strings"
-    [delete ar*ound me!]        ds]             delete around me!
-    remove <b>HTML t*ags</b>    dst             remove HTML tags
-    'change quot*es'            cs'"            "change quotes"
-    <b>or tag* types</b>        csth1<CR>       <h1>or tag types</h1>
-    delete(functi*on calls)     dsf             function calls
-```
-
-Detailed information on how to use this plugin can be found in
-[`:h nvim-surround.usage`](https://github.com/kylechui/nvim-surround/blob/main/doc/nvim-surround.txt).

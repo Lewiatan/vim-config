@@ -17,7 +17,12 @@ return {
     'echasnovski/mini.pairs',
     version = '*', 
     config = function()
-      require('mini.pairs').setup()
+      require('mini.pairs').setup({
+        mappings = {
+          ['<'] = { action = 'open', pair = '<>', neigh_pattern = '[^\\].' },
+          ['>'] = { action = 'close', pair = '<>', neigh_pattern = '[^\\].' },
+        },
+      })
     end
   },
   {
@@ -28,17 +33,45 @@ return {
     end
   },
   {
-    'echasnovski/mini.snippets',
+    'echasnovski/mini.move',
     version = '*',
     config = function()
-      require('mini.snippets').setup()
+      require('mini.move').setup() 
     end
   },
-  { 
-    'echasnovski/mini.completion',
+  {
+    'echasnovski/mini.splitjoin',
     version = '*',
     config = function()
-      require('mini.completion').setup()
+      require('mini.splitjoin').setup() 
     end
   },
+  {
+    'echasnovski/mini.surround',
+    version = '*',
+    config = function()
+      require('mini.surround').setup() 
+    end
+  },
+  {
+    'echasnovski/mini.cursorword',
+    version = '*',
+    config = function()
+      require('mini.cursorword').setup() 
+    end
+  },
+  -- {
+  --   'echasnovski/mini.snippets',
+  --   version = '*',
+  --   config = function()
+  --     require('mini.snippets').setup()
+  --   end
+  -- },
+  -- { 
+  --   'echasnovski/mini.completion',
+  --   version = '*',
+  --   config = function()
+  --     require('mini.completion').setup()
+  --   end
+  -- },
 }
