@@ -3,9 +3,9 @@
 ## Requirements for vim functionality in order to make if IDE for PHP and JavaScript/TypeScript
 
 - [x]  Package management (lazy)
-- [ ]  Fuzzy search (telescope)
+- [x]  Fuzzy search (telescope)
 - [x]  Project files tree view (nvim-tree)
-- [ ]  Syntax highlighting & indentation (treesitter)
+- [x]  Syntax highlighting & indentation (treesitter)
 - [x]  Color scheme
 - [ ]  LSP for php and js 
 - [ ]  Phpactor as a plugin?
