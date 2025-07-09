@@ -69,13 +69,19 @@
 `gc` also works with words motions like `gcw`, `gcap`, `gc{` and so on
 
 ### Move code
+| Keybind | Function |
+| ------- | -------- |
 | `<M-hjkl>` | Movie single line |
 | `<M-hjkl>` | (In visual mode) Movie selection |
 
 ### Split/join parameters
+| Keybind | Function |
+| ------- | -------- |
 | `<gS>` | Toggle split/join |
 
 ### Surround motions
+| Keybind | Function |
+| ------- | -------- |
 | `sa` | Surround around motion |
 | `sd` | Delete around motion |
 | `sr` | Replace around motion |
