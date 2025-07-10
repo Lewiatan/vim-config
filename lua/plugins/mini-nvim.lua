@@ -55,6 +55,7 @@ return {
   },
   {
     'echasnovski/mini.cursorword',
+    enabled = false,
     version = '*',
     config = function()
       require('mini.cursorword').setup() 

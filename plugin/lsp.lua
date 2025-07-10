@@ -18,8 +18,7 @@ vim.lsp.config("*", {
 
 require("mason").setup()
 require("mason-lspconfig").setup({
-  ensure_installed = servers,
-  automatic_enable = true,
+  ensure_installed = servers
 })
 
 vim.diagnostic.config({
