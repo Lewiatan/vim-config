@@ -41,8 +41,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
     map("H", vim.lsp.buf.hover, "Hover Documentation")
     map("gr", vim.lsp.buf.references, "[G]oto [R]eferences")
-    map("gds", vim.lsp.buf.document_symbol, "[G]oto [D]ocument [S]ymbol")
-    map("gws", vim.lsp.buf.workspace_symbol, "[G]oto [W]orkspace [S]ymbol")
     map("gt", vim.lsp.buf.type_definition, "[G]oto [T]ype Definition")
     map("gd", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
     map("gD", vim.lsp.buf.definition, "[G]oto [D]eclaration")
@@ -50,5 +48,8 @@ vim.api.nvim_create_autocmd("LspAttach", {
     map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
     map("<leader>cr", vim.lsp.buf.rename, "[C]ode [R]ename")
     map("<C-f>", vim.lsp.buf.format, "Format")
+
+    map("gds", vim.lsp.buf.document_symbol, "[G]oto [D]ocument [S]ymbol")
+    map("gws", vim.lsp.buf.workspace_symbol, "[G]oto [W]orkspace [S]ymbol")
   end,
 })
