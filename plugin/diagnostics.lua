@@ -1,0 +1,41 @@
+-- vim.diagnostic.config({
+--   severity_sort = true,
+--   update_in_insert = true,
+--   underline = { severity = vim.diagnostic.severity.ERROR },
+--   float = {
+--     source = "if_many",
+--     focusable = true,
+--     style = "minimal",
+--     border = vim.g.border_style,
+--   },
+--   signs = {
+--     text = {
+--       [vim.diagnostic.severity.ERROR] = " ", -- 󰅚
+--       [vim.diagnostic.severity.WARN] = " ", -- 󰀪
+--       [vim.diagnostic.severity.INFO] = " ", -- 󰋽
+--       [vim.diagnostic.severity.HINT] = "󰠠 ", -- 󰌶
+--     },
+--   },
+--   virtual_text = {
+--     source = "if_many",
+--     spacing = 2,
+--     prefix = "",
+--     format = function(diagnostic)
+--       local diagnostic_message = {
+--         [vim.diagnostic.severity.ERROR] = "󰅚 " .. diagnostic.message,
+--         [vim.diagnostic.severity.WARN] = "󰀪 " .. diagnostic.message,
+--         [vim.diagnostic.severity.INFO] = "󰋽 " .. diagnostic.message,
+--         [vim.diagnostic.severity.HINT] = "󰌶 " .. diagnostic.message,
+--       }
+--       return diagnostic_message[diagnostic.severity]
+--     end,
+--   },
+-- })
+    -- local map = function(keys, func, desc, mode)
+    --   mode = mode or "n"
+    --   vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
+    -- end
+    -- -- Diagnostic keymaps
+    -- map("<leader>e", vim.diagnostic.open_float, "Open floating diagnostic message")
+    -- map("<leader>q", vim.diagnostic.setloclist, "Open diagnostics list")
+
