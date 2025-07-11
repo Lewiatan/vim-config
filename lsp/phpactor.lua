@@ -1,5 +1,5 @@
 return {
   cmd = {'phpactor', 'language-server'},
   filetypes = {'php', 'phar'},
-  root_markers = {'composer.json'},
+  root_markers = {'.phpactor.json'},
 }
