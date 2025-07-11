@@ -66,10 +66,10 @@ vim.api.nvim_create_autocmd("LspAttach", {
     map("H", vim.lsp.buf.hover, "Hover Documentation")
     map("gr", vim.lsp.buf.references, "[G]oto [R]eferences")
     map("gt", vim.lsp.buf.type_definition, "[G]oto [T]ype Definition")
-    map("gd", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
-    map("gD", vim.lsp.buf.definition, "[G]oto [D]eclaration")
+    map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
+    map("gd", vim.lsp.buf.definition, "[G]oto [D]efinition")
     map("gi", vim.lsp.buf.implementation, "[G]oto [I]mplementatio")
-    map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
+    map("<c-space>", vim.lsp.buf.code_action, "[C]ode [A]ction")
     map("<leader>cr", vim.lsp.buf.rename, "[C]ode [R]ename")
     map("<C-f>", vim.lsp.buf.format, "Format")
 
