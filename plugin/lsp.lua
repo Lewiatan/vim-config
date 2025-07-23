@@ -5,9 +5,10 @@ local servers = {
   "ts_ls",                 -- Typescript/javascript
   "phpactor",              -- PHP
   'jsonls',
-  -- 'angularls',
+  'angularls',
   'cucumber_language_server',
-  'dockerls'
+  'dockerls',
+  'css_variables'
 }
 
 vim.lsp.enable(servers)
