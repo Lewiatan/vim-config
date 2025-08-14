@@ -7,8 +7,8 @@
 - [x]  Project files tree view (nvim-tree)
 - [x]  Syntax highlighting & indentation (treesitter)
 - [x]  Color scheme
-- [ ]  LSP for php and js 
-- [ ]  Phpactor as a plugin?
+- [x]  LSP for php and js/ts/angular 
+- [x]  Phpactor as a plugin
 - [ ]  Support for refactoring actions:
     - [ ]  Extract method
     - [ ]  Extract variable/constsant
@@ -134,4 +134,72 @@
 | Keybind | Function |
 | ------- | -------- |
 | `<leader>lh` | Open |
+
+## LSP Configuration
+
+### Configured Language Servers
+- **lua_ls** - Lua Language Server
+- **cssls** - CSS Language Server  
+- **html** - HTML Language Server
+- **emmet_language_server** - HTML Emmet support
+- **ts_ls** - TypeScript/JavaScript Language Server
+- **phpactor** - PHP Language Server
+- **jsonls** - JSON Language Server
+- **angularls** - Angular Language Server
+- **cucumber_language_server** - Cucumber/Gherkin support
+- **dockerls** - Docker Language Server
+- **css_variables** - CSS Variables Language Server
+
+### Custom LSP Commands
+
+#### `:LspTest`
+Tests all LSP configurations and checks if required executables are available.
+- Validates each server configuration file
+- Checks TypeScript paths for Angular LSP
+- Verifies that language server executables are in PATH
+
+#### `:AngularLspDebug`
+Comprehensive Angular LSP diagnostic tool.
+- Detects if you're in an Angular project (looks for `angular.json`)
+- Shows active LSP clients
+- Displays current buffer information
+- Shows diagnostics breakdown by source
+
+#### `:AngularLspRestart`
+Restarts the Angular Language Server.
+- Stops all Angular LSP clients
+- Automatically restarts them after 1 second
+- Useful when Angular LSP gets stuck or needs to reload project configuration
+
+### LSP Keybindings (Angular Projects)
+| Keybind | Function |
+| ------- | -------- |
+| `gd` | Go to definition |
+| `gD` | Go to declaration |
+| `gr` | Find references |
+| `K` | Hover documentation |
+
+### Installation Requirements
+
+#### Required Global npm packages:
+```bash
+npm install -g @angular/language-server
+npm install -g typescript-language-server
+npm install -g typescript
+npm install -g vscode-langservers-extracted
+npm install -g css-variables-language-server
+```
+
+### Troubleshooting
+
+#### Angular LSP Issues
+1. **Components not found**: Run `:AngularLspDebug` to check project detection and TypeScript paths
+2. **LSP not starting**: Run `:AngularLspRestart` 
+3. **TypeScript version conflicts**: Ensure TypeScript 5.0+ is installed globally
+
+#### General LSP Issues
+1. **Test all configurations**: `:LspTest`
+2. **Check LSP health**: `:checkhealth lsp`
+3. **View LSP logs**: `tail -f ~/.local/state/nvim/lsp.log`
+4. **Restart all LSP clients**: `:LspRestart`
 
