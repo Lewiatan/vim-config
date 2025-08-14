@@ -2,8 +2,29 @@
 -- Make sure you have the angular language server installed
 -- npm i -g @angular/language-server
 
+-- Build Angular command with TypeScript paths at module load time
+local angular_cmd = { 'ngserver', '--stdio' }
+
+-- Try to add TypeScript paths
+local ok, ts_global = pcall(vim.fn.system, 'npm root -g')
+if ok and ts_global then
+  ts_global = ts_global:gsub('\n', '')
+  local ts_path = ts_global .. '/typescript'
+  
+  if vim.fn.isdirectory(ts_path) == 1 then
+    -- Set NODE_PATH to help Angular LS find TypeScript
+    vim.env.NODE_PATH = (vim.env.NODE_PATH or '') .. ':' .. ts_global
+    angular_cmd = {
+      'ngserver',
+      '--stdio',
+      '--tsProbeLocations', ts_path,
+      '--ngProbeLocations', ts_path
+    }
+  end
+end
+
 return {
-  cmd = { vim.fn.stdpath('config') .. '/scripts/ngserver-wrapper.sh' },
+  cmd = angular_cmd,
   filetypes = { 'typescript', 'html', 'typescriptreact', 'typescript.tsx' },
   root_markers = { 'angular.json', 'project.json' },
   settings = {

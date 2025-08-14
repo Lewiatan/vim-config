@@ -46,14 +46,6 @@ function M.test()
     "css-variables-language-server"
   }
   
-  -- Test Angular wrapper script
-  local wrapper_script = vim.fn.stdpath('config') .. '/scripts/ngserver-wrapper.sh'
-  if vim.fn.filereadable(wrapper_script) == 1 then
-    print("✓ Angular wrapper script found: " .. wrapper_script)
-  else
-    print("✗ Angular wrapper script missing: " .. wrapper_script)
-  end
-  
   for _, exe in ipairs(executables) do
     local path = vim.fn.exepath(exe)
     if path ~= "" then

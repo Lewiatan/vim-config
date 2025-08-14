@@ -190,6 +190,20 @@ npm install -g vscode-langservers-extracted
 npm install -g css-variables-language-server
 ```
 
+#### Neovim Version Compatibility
+- **Tested with**: Neovim 0.12.0-dev
+- **Minimum required**: Neovim 0.11+
+- **LSP API**: Uses the new Neovim LSP configuration API (`vim.lsp.config`, `vim.lsp.enable`)
+- **Angular LSP**: Uses simplified static configuration for better compatibility
+
+### Angular LSP Configuration Notes
+
+The Angular LSP uses a simplified configuration approach that:
+- **Works reliably** across different Neovim versions
+- **Uses global TypeScript** installation automatically
+- **Managed separately** from Mason to avoid version conflicts
+- **Starts with basic command** (`ngserver --stdio`) for maximum compatibility
+
 ### Troubleshooting
 
 #### Angular LSP Issues
