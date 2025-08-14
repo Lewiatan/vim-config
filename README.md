@@ -42,6 +42,15 @@
 - <https://github.com/echasnovski/mini.nvim> - a way to go?
 - <https://github.com/karb94/neoscroll.nvim>
 - <https://github.com/folke/snacks.nvim> - replacement for some older plugins like `dressing`
+- <https://github.com/karb94/neoscroll.nvim>
+- <https://github.com/stevearc/conform.nvim>
+- <https://github.com/kevinhwang91/nvim-fFHighlight>
+
+### LLM Capabalities
+- <https://github.com/supermaven-inc/supermaven-nvim>
+- <https://github.com/ravitemer/mcphub.nvim>
+- <https://github.com/yetone/avante.nvim>
+- <https://github.com/GeorgesAlkhouri/nvim-aider>
 
 ## Useful keybindings
 ### Window
