@@ -8,7 +8,9 @@ local servers = {
   'jsonls',
   'cucumber_language_server',
   'dockerls',
-  'css_variables'
+  'css_variables',
+  'tailwindcss',           -- Tailwind CSS
+  'eslint'                 -- ESLint for React
 }
 
 -- Add Angular manually (not managed by Mason)
