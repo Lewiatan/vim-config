@@ -10,7 +10,7 @@ function M.test()
   local servers = {
     "lua_ls", "cssls", "html", "emmet_language_server", 
     "ts_ls", "phpactor", "jsonls", "angularls", 
-    "cucumber_language_server", "dockerls", "css_variables"
+    "cucumber_language_server", "dockerls", "css_variables", "tailwindcss", "eslint"
   }
   
   for _, server in ipairs(servers) do
@@ -32,18 +32,27 @@ function M.test()
   local ts_global = vim.fn.system("npm root -g"):gsub("\n", "")
   print("Global npm modules: " .. ts_global)
   
-  local ts_lib = ts_global .. "/typescript/lib"
-  if vim.fn.isdirectory(ts_lib) == 1 then
-    print("✓ TypeScript library found at: " .. ts_lib)
-  else
-    print("✗ TypeScript library not found at: " .. ts_lib)
+  local ts_paths = {
+    ts_global .. "/typescript/lib",
+    vim.fn.stdpath("data") .. "/mason/packages/angular-language-server/node_modules/typescript/lib",
+  }
+  local ts_found = false
+  for _, ts_lib in ipairs(ts_paths) do
+    if vim.fn.isdirectory(ts_lib) == 1 then
+      print("✓ TypeScript library found at: " .. ts_lib)
+      ts_found = true
+      break
+    end
+  end
+  if not ts_found then
+    print("✗ TypeScript library not found globally or in Mason's Angular package")
   end
   
   -- Test executables
   print("\n=== Executable Test ===")
   local executables = {
     "ngserver", "typescript-language-server", "vscode-html-language-server",
-    "css-variables-language-server"
+    "css-variables-language-server", "tailwindcss-language-server", "vscode-eslint-language-server"
   }
   
   for _, exe in ipairs(executables) do
