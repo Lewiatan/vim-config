@@ -30,8 +30,14 @@ end
 
 vim.lsp.enable(all_servers)
 
+local capabilities = require("blink.cmp").get_lsp_capabilities(nil, true)
+capabilities.textDocument.foldingRange = {
+  dynamicRegistration = false,
+  lineFoldingOnly = true,
+}
+
 vim.lsp.config("*", {
-  capabilities = require("blink.cmp").get_lsp_capabilities(nil, true),
+  capabilities = capabilities,
   root_markers = { ".git" },
   handlers = {
     -- Handle missing workspace/diagnostic/refresh method

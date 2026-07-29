@@ -6,6 +6,12 @@ vim.cmd("set scrolloff=10")
 vim.cmd("set undofile")
 vim.cmd("set undodir=$HOME/.vim/undo")
 vim.cmd("set nu")
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.opt.foldenable = true
+vim.opt.foldlevel = 99
+vim.opt.foldlevelstart = 99
+vim.opt.foldcolumn = "1"
 
 vim.g.mapleader = " "
 vim.wo.relativenumber = true

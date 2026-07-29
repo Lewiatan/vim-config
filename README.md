@@ -21,7 +21,7 @@
 - [x]  Local file history (undo tree)
 - [x]  Github support (lazy git)
 - [ ]  Database interface (nvim-dbee or vim-dadbod-ui)
-- [ ]  Code folding
+- [x]  Code folding
 - [x]  Code formatting where supported by attached LSP
 - [x]  Navigate jump history backward and forward
 - [x]  List document and workspace symbols
@@ -122,6 +122,15 @@
 | `<C-d>`, `<C-u>` | Half-page scroll and center cursor |
 | `<C-b>`, `<C-f>` | Jump backward/forward through navigation history |
 | `J`, `K` | Move 20 lines down/up and center cursor |
+
+### Folding
+Native Tree-sitter folding is used by default. Attached language servers provide folding ranges when supported.
+
+| Keybind | Function |
+| ------- | -------- |
+| `za` | Toggle fold under cursor |
+| `zc`, `zo` | Close/open fold under cursor |
+| `zM`, `zR` | Close/open all folds |
 
 ### Completion
 Insert-mode mappings from blink.cmp.
