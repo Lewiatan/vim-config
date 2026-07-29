@@ -63,7 +63,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     map("gi", vim.lsp.buf.implementation, "[G]oto [I]mplementatio")
     map("<c-space>", vim.lsp.buf.code_action, "[C]ode [A]ction")
     map("<leader>cr", vim.lsp.buf.rename, "[C]ode [R]ename")
-    map("<C-f>", vim.lsp.buf.format, "Format")
+    map("<leader>cf", vim.lsp.buf.format, "[C]ode [F]ormat")
 
     map("gds", vim.lsp.buf.document_symbol, "[G]oto [D]ocument [S]ymbol")
     map("gws", vim.lsp.buf.workspace_symbol, "[G]oto [W]orkspace [S]ymbol")

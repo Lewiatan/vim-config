@@ -23,7 +23,7 @@
 - [ ]  Database interface (nvim-dbee or vim-dadbod-ui)
 - [ ]  Code folding
 - [x]  Code formatting where supported by attached LSP
-- [ ]  Go back (ctrl - backspace in storm)
+- [x]  Navigate jump history backward and forward
 - [x]  List document and workspace symbols
 
 ## Implemented Features
@@ -120,6 +120,7 @@
 | `<C-s>` | Write all buffers |
 | `gg`, `G` | Jump to first/last line and center cursor |
 | `<C-d>`, `<C-u>` | Half-page scroll and center cursor |
+| `<C-b>`, `<C-f>` | Jump backward/forward through navigation history |
 | `J`, `K` | Move 20 lines down/up and center cursor |
 
 ### Completion
@@ -150,7 +151,7 @@ Available only when a language server attaches to the current buffer.
 | `gt` | Go to type definition |
 | `<C-space>` | Code actions |
 | `<leader>cr` | Rename symbol |
-| `<C-f>` | Format buffer when server supports it |
+| `<leader>cf` | Format buffer when server supports it |
 | `gds` | List document symbols |
 | `gws` | Search workspace symbols |
 
