@@ -84,7 +84,7 @@ return {
     vim.keymap.set('n', 'gd', goto_template_file, opts)
     vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
     vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
-    vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+    vim.keymap.set('n', 'H', vim.lsp.buf.hover, opts)
     
     -- Additional Angular-specific keybindings
     vim.keymap.set('n', '<leader>at', goto_template_file, { buffer = bufnr, silent = true, desc = 'Go to Angular template' })
