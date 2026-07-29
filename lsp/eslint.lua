@@ -1,4 +1,5 @@
 return {
+  cmd = { "vscode-eslint-language-server", "--stdio" },
   filetypes = {
     "javascript",
     "javascriptreact",
@@ -38,9 +39,6 @@ return {
     codeActionOnSave = {
       enable = false,
       mode = "all"
-    },
-    experimental = {
-      useFlatConfig = false
     },
     format = true,
     nodePath = "",

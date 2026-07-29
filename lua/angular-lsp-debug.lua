@@ -29,7 +29,7 @@ function M.check()
   
   -- Check current buffer
   local bufnr = vim.api.nvim_get_current_buf()
-  local filetype = vim.api.nvim_buf_get_option(bufnr, 'filetype')
+  local filetype = vim.api.nvim_get_option_value('filetype', { buf = bufnr })
   local filename = vim.api.nvim_buf_get_name(bufnr)
   
   print("\n=== Current Buffer ===")

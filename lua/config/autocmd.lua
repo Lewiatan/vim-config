@@ -31,7 +31,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(event)
     local client = vim.lsp.get_client_by_id(event.data.client_id)
     if client and client.server_capabilities.documentHighlightProvider then
-      local highlight_augroup = vim.api.nvim_create_augroup("lsp-highlight", { clear = false })
+      local highlight_augroup = vim.api.nvim_create_augroup("lsp-highlight-" .. event.buf, { clear = true })
       vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
         buffer = event.buf,
         group = highlight_augroup,
@@ -44,14 +44,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
         callback = vim.lsp.buf.clear_references,
       })
     end
-
-    vim.api.nvim_create_autocmd("LspDetach", {
-      group = vim.api.nvim_create_augroup("lsp-detach", { clear = true }),
-      callback = function(event2)
-        vim.lsp.buf.clear_references()
-        vim.api.nvim_clear_autocmds({ group = "lsp-highlight", buffer = event2.buf })
-      end,
-    })
 
     local map = function(keys, func, desc)
       vim.keymap.set("n", keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
@@ -75,5 +67,34 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
     map("gds", vim.lsp.buf.document_symbol, "[G]oto [D]ocument [S]ymbol")
     map("gws", vim.lsp.buf.workspace_symbol, "[G]oto [W]orkspace [S]ymbol")
+  end,
+})
+
+vim.api.nvim_create_autocmd("LspDetach", {
+  group = vim.api.nvim_create_augroup("lsp-detach", { clear = true }),
+  callback = function(event)
+    if not vim.api.nvim_buf_is_valid(event.buf) then
+      return
+    end
+
+    vim.api.nvim_buf_call(event.buf, vim.lsp.buf.clear_references)
+
+    vim.schedule(function()
+      if not vim.api.nvim_buf_is_valid(event.buf) then
+        return
+      end
+
+      local has_highlight_client = false
+      for _, client in ipairs(vim.lsp.get_clients({ bufnr = event.buf })) do
+        if client.server_capabilities.documentHighlightProvider then
+          has_highlight_client = true
+          break
+        end
+      end
+
+      if not has_highlight_client then
+        vim.api.nvim_create_augroup("lsp-highlight-" .. event.buf, { clear = true })
+      end
+    end)
   end,
 })

@@ -31,7 +31,7 @@ return {
           "xml",
           "markdown"
         },
-        sync_instsall = false,
+        sync_install = false,
         additional_vim_regex_highlighting = false,
       })
     end

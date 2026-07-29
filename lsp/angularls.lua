@@ -9,9 +9,9 @@ local angular_cmd = { 'ngserver', '--stdio' }
 local ok, ts_global = pcall(vim.fn.system, 'npm root -g')
 if ok and ts_global then
   ts_global = ts_global:gsub('\n', '')
-  local ts_path = ts_global .. '/typescript'
+  local ts_path = ts_global
   
-  if vim.fn.isdirectory(ts_path) == 1 then
+  if vim.fn.isdirectory(ts_path .. '/typescript') == 1 then
     -- Set NODE_PATH to help Angular LS find TypeScript
     vim.env.NODE_PATH = (vim.env.NODE_PATH or '') .. ':' .. ts_global
     angular_cmd = {
