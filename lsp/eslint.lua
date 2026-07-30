@@ -40,6 +40,8 @@ return {
       enable = false,
       mode = "all"
     },
+    -- The server reads this object even when flat-config detection is automatic.
+    experimental = {},
     format = true,
     nodePath = "",
     onIgnoredFiles = "off",

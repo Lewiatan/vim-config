@@ -5,13 +5,24 @@ local M = {}
 
 function M.check()
   print("=== Angular LSP Diagnostic ===")
-  
+
+  local bufnr = vim.api.nvim_get_current_buf()
+  local filename = vim.api.nvim_buf_get_name(bufnr)
+
   -- Check if we're in an Angular project
-  local angular_config = vim.fs.find({'angular.json'}, {upward = true})[1]
-  if angular_config then
+  local root = vim.fs.root(bufnr, { 'angular.json', 'project.json' })
+  if root then
+    local angular_config = vim.fs.find({ 'angular.json', 'project.json' }, { path = root, limit = 1 })[1]
     print("✓ Angular project detected: " .. angular_config)
+    local node_modules = root .. "/node_modules"
+    print("\n=== Angular Dependencies ===")
+    for _, package in ipairs({ "typescript", "@angular/language-service" }) do
+      local path = node_modules .. "/" .. package
+      local marker = vim.fn.isdirectory(path) == 1 and "✓" or "✗"
+      print(marker .. " " .. package .. ": " .. path)
+    end
   else
-    print("✗ No angular.json found - not an Angular project")
+    print("✗ No angular.json or project.json found above current buffer: " .. filename)
     return
   end
   
@@ -28,9 +39,7 @@ function M.check()
   end
   
   -- Check current buffer
-  local bufnr = vim.api.nvim_get_current_buf()
   local filetype = vim.api.nvim_get_option_value('filetype', { buf = bufnr })
-  local filename = vim.api.nvim_buf_get_name(bufnr)
   
   print("\n=== Current Buffer ===")
   print("File: " .. filename)

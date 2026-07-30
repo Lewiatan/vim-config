@@ -1,32 +1,40 @@
--- lsp/angularls.lua
--- Make sure you have the angular language server installed
--- npm i -g @angular/language-server
+local angular_root_markers = { 'angular.json', 'project.json' }
 
--- Build Angular command with TypeScript paths at module load time
-local angular_cmd = { 'ngserver', '--stdio' }
-
--- Try to add TypeScript paths
-local ok, ts_global = pcall(vim.fn.system, 'npm root -g')
-if ok and ts_global then
-  ts_global = ts_global:gsub('\n', '')
-  local ts_path = ts_global
-  
-  if vim.fn.isdirectory(ts_path .. '/typescript') == 1 then
-    -- Set NODE_PATH to help Angular LS find TypeScript
-    vim.env.NODE_PATH = (vim.env.NODE_PATH or '') .. ':' .. ts_global
-    angular_cmd = {
-      'ngserver',
-      '--stdio',
-      '--tsProbeLocations', ts_path,
-      '--ngProbeLocations', ts_path
-    }
+local function angular_node_modules(root)
+  local node_modules = root .. '/node_modules'
+  if vim.fn.isdirectory(node_modules .. '/typescript') == 1
+      and vim.fn.isdirectory(node_modules .. '/@angular/language-service') == 1 then
+    return node_modules
   end
 end
 
 return {
-  cmd = angular_cmd,
+  cmd = function(dispatchers, config)
+    local node_modules = angular_node_modules(config.root_dir)
+    return vim.lsp.rpc.start({
+      'ngserver',
+      '--stdio',
+      '--tsProbeLocations', node_modules,
+      '--ngProbeLocations', node_modules,
+    }, dispatchers, { cwd = config.root_dir })
+  end,
   filetypes = { 'typescript', 'html', 'typescriptreact', 'typescript.tsx' },
-  root_markers = { 'angular.json', 'project.json' },
+  root_dir = function(bufnr, on_dir)
+    local root = vim.fs.root(bufnr, angular_root_markers)
+    if not root then
+      return
+    end
+
+    if angular_node_modules(root) then
+      on_dir(root)
+      return
+    end
+
+    vim.notify(
+      'AngularLS skipped: install workspace dependencies including typescript and @angular/language-service',
+      vim.log.levels.WARN
+    )
+  end,
   settings = {
     angular = {
       log = 'verbose',

@@ -27,25 +27,17 @@ function M.test()
     end
   end
   
-  -- Test Angular-specific paths
-  print("\n=== Angular LSP Path Test ===")
-  local ts_global = vim.fn.system("npm root -g"):gsub("\n", "")
-  print("Global npm modules: " .. ts_global)
-  
-  local ts_paths = {
-    ts_global .. "/typescript/lib",
-    vim.fn.stdpath("data") .. "/mason/packages/angular-language-server/node_modules/typescript/lib",
-  }
-  local ts_found = false
-  for _, ts_lib in ipairs(ts_paths) do
-    if vim.fn.isdirectory(ts_lib) == 1 then
-      print("✓ TypeScript library found at: " .. ts_lib)
-      ts_found = true
-      break
+  -- AngularLS must load both packages from the active workspace.
+  print("\n=== Angular LSP Dependency Test ===")
+  local angular_root = vim.fs.root(0, { "angular.json", "project.json" })
+  if not angular_root then
+    print("- Current buffer is not in an Angular workspace")
+  else
+    for _, package in ipairs({ "typescript", "@angular/language-service" }) do
+      local path = angular_root .. "/node_modules/" .. package
+      local marker = vim.fn.isdirectory(path) == 1 and "✓" or "✗"
+      print(marker .. " " .. package .. ": " .. path)
     end
-  end
-  if not ts_found then
-    print("✗ TypeScript library not found globally or in Mason's Angular package")
   end
   
   -- Test executables
