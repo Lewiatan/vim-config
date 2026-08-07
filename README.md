@@ -2,6 +2,8 @@
 
 ## Requirements for vim functionality in order to make if IDE for PHP and JavaScript/TypeScript
 
+Tree-sitter parser installation requires the `tree-sitter` CLI (0.25+) and a C compiler. Some parsers also require Node.js 23+.
+
 - [x]  Package management (lazy)
 - [x]  Fuzzy search (telescope)
 - [x]  Project files tree view (Neo-tree)
@@ -239,6 +241,14 @@ Restarts the Angular Language Server.
 ### Installation Requirements
 
 Mason installs and exposes the configured standard language servers. Run `:Mason` to inspect or install a server. Angular is managed separately, so `ngserver` must be available on `PATH`; a global `@angular/language-server` installation is one supported option.
+
+Each Angular workspace must install these local development dependencies:
+
+```sh
+npm install --save-dev typescript @angular/language-service@^<angular-version>
+```
+
+Replace `<angular-version>` with the workspace's `@angular/core` major/minor version. AngularLS probes the workspace `node_modules`; it does not use globally installed TypeScript or Angular Language Service packages.
 
 #### Neovim Version Compatibility
 - **Tested with**: Neovim 0.12.0-dev
