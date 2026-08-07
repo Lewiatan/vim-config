@@ -35,6 +35,7 @@ Tree-sitter parser installation requires the `tree-sitter` CLI (0.25+) and a C c
 - Color previews with nvim-colorizer
 - Automatic HTML/JSX tag closing and renaming
 - Persistent undo history
+- System clipboard integration for yanks, deletes, changes, and puts
 - Dashboard and statusline
 - Text objects, pairs, surrounds, and split/join motions from mini.nvim
 

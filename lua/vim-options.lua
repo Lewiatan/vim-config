@@ -6,6 +6,7 @@ vim.cmd("set scrolloff=10")
 vim.cmd("set undofile")
 vim.cmd("set undodir=$HOME/.vim/undo")
 vim.cmd("set nu")
+vim.opt.clipboard:append("unnamedplus")
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 vim.opt.foldenable = true
