@@ -67,13 +67,16 @@ Tree-sitter parser installation requires the `tree-sitter` CLI (0.25+) and a C c
 
 ## Useful keybindings
 ### Window
+
 | Keybind | Function |
 | ------- | -------- |
 | `<C-w><C-s>` | Split horizontally | 
 | `<C-w><C-v>` | Split vertically |
 | `<C-h,j,k,l>` | Move around splits |
 
+
 ### File searching
+
 | Keybind | Function |
 | ------- | -------- |
 | `<leader>ff` | Find files |
@@ -82,26 +85,34 @@ Tree-sitter parser installation requires the `tree-sitter` CLI (0.25+) and a C c
 | In telescope |
 | `<C-j,k>` | Select prex, next |
 
+
 ### Code comments
+
 | Keybind | Function |
 | ------- | -------- |
 | `gcc` | Line comment |
 | `gc` | Block comment (in visual mode) |
 | `dgc` | Delete whole comment block |
+
 `gc` also works with words motions like `gcw`, `gcap`, `gc{` and so on
 
 ### Move code
+
 | Keybind | Function |
 | ------- | -------- |
 | `<M-h,j,k,l>` | Movie single line |
 | `<M-h,j,k,l>` | (In visual mode) Movie selection |
 
+
 ### Split/join parameters
+
 | Keybind | Function |
 | ------- | -------- |
 | `<gS>` | Toggle split/join |
 
+
 ### Surround motions
+
 | Keybind | Function |
 | ------- | -------- |
 | `sa` | Surround around motion |
@@ -111,12 +122,16 @@ Tree-sitter parser installation requires the `tree-sitter` CLI (0.25+) and a C c
 | `sh` | Highlight around motion |
 | `n`/`l` | Next/Last suffixes for forward/backward (ex. `shn)` higlights next pair `()`) |
 
+
 ### Lazy Git
+
 | Keybind | Function |
 | ------- | -------- |
 | `<leader>gg` | Open Lazy Git |
 
+
 ### General
+
 | Keybind | Function |
 | ------- | -------- |
 | `<C-z>` | Undo |
@@ -126,6 +141,7 @@ Tree-sitter parser installation requires the `tree-sitter` CLI (0.25+) and a C c
 | `<C-b>`, `<C-f>` | Jump backward/forward through navigation history |
 | `J`, `K` | Move 20 lines down/up and center cursor |
 
+
 ### Folding
 Native Tree-sitter folding is used by default. Attached language servers provide folding ranges when supported.
 
@@ -134,6 +150,7 @@ Native Tree-sitter folding is used by default. Attached language servers provide
 | `za` | Toggle fold under cursor |
 | `zc`, `zo` | Close/open fold under cursor |
 | `zM`, `zR` | Close/open all folds |
+
 
 ### Completion
 Insert-mode mappings from blink.cmp.
@@ -147,6 +164,7 @@ Insert-mode mappings from blink.cmp.
 | `<Up>`, `<Down>`, `<C-p>`, `<C-n>` | Select previous/next completion |
 | `<C-b>`, `<C-f>` | Scroll completion documentation |
 | `<C-k>` | Toggle signature help |
+
 
 ### LSP
 Available only when a language server attaches to the current buffer.
@@ -170,6 +188,7 @@ Available only when a language server attaches to the current buffer.
 Angular buffers also provide `<leader>at` to open a component template or style file from its declaration.
 
 ### NeoTree
+
 | Keybind | Function |
 | ------- | -------- |
 | `<leader>e` | Open |
@@ -183,10 +202,26 @@ Angular buffers also provide `<leader>at` to open a component template or style 
 | `?` | Toggle hidden |
 | `<esc>`,`q` | Close window |
 
+
 ### UndoTree
+
 | Keybind | Function |
 | ------- | -------- |
 | `<leader>lh` | Open |
+
+
+### Markview
+
+| Sub-command      | Arguments           | Description                              |
+|------------------|---------------------|------------------------------------------|
+| `Toggle`         | none                | Toggles preview *globally*.              |
+| `Enable`         | none                | Enables preview *globally*.              |
+| `Disable`        | none                | Disables preview *globally*.             |
+| `toggle`         | **buffer**, integer | Toggles preview for **buffer**.          |
+| `enable`         | **buffer**, integer | Enables preview for **buffer**.          |
+| `disable`        | **buffer**, integer | Disables preview for **buffer**.         |
+| `splitToggle`    | none                | Toggles *splitview*.                     |
+
 
 ## LSP Configuration
 
@@ -206,11 +241,9 @@ Angular buffers also provide `<leader>at` to open a component template or style 
 - **eslint** - ESLint Language Server
 
 ### Monorepo Behavior
-
 Each LSP selects the nearest matching service root before falling back to the repository `.git` directory. TypeScript, ESLint, and Tailwind use `package.json`; PHP uses `composer.json`; Angular uses `angular.json`; Lua uses `.luarc.json`, `.luarc.jsonc`, or `.nvim.lua`.
 
 ### Custom LSP Commands
-
 #### `:LspTest`
 Tests all LSP configurations and checks if required executables are available.
 - Validates each server configuration file
@@ -231,6 +264,7 @@ Restarts the Angular Language Server.
 - Useful when Angular LSP gets stuck or needs to reload project configuration
 
 ### LSP Keybindings (Angular Projects)
+
 | Keybind | Function |
 | ------- | -------- |
 | `gd` | Go to definition |
@@ -239,8 +273,8 @@ Restarts the Angular Language Server.
 | `H` | Hover documentation |
 | `<leader>at` | Open component template or style file |
 
-### Installation Requirements
 
+### Installation Requirements
 Mason installs and exposes the configured standard language servers. Run `:Mason` to inspect or install a server. Angular is managed separately, so `ngserver` must be available on `PATH`; a global `@angular/language-server` installation is one supported option.
 
 Each Angular workspace must install these local development dependencies:
@@ -258,11 +292,9 @@ Replace `<angular-version>` with the workspace's `@angular/core` major/minor ver
 - **Angular LSP**: Uses local `typescript` and `@angular/language-service` from the current Angular workspace
 
 ### Angular LSP Configuration Notes
-
 The Angular LSP starts only when the nearest Angular workspace has local `typescript` and `@angular/language-service` packages. It probes that workspace's `node_modules`, preventing version mismatches between Angular projects and globally installed tooling.
 
 ### Troubleshooting
-
 #### Angular LSP Issues
 1. **Components not found**: Run `:AngularLspDebug` to check project detection and workspace dependencies
 2. **LSP not starting**: Install project dependencies, then run `:AngularLspRestart`
